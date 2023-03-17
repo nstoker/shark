@@ -1,4 +1,5 @@
 class Shark < ApplicationRecord
-  validates :name, presence: true, uniqueness: trusted
+  has_many :posts, dependent: :destroy
+  validates :name, presence: true, uniqueness: true
   validates :facts, presence: true
 end
